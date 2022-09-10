@@ -1,3 +1,4 @@
-# Portfolio
-作品集
-内容自取
+# PermissionsX
+开源协议：Apache License 2.0
+即将开始开发
+针对android电话权限的库
