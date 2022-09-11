@@ -3,6 +3,6 @@
 转载至《Kotlin开发快速入门与实践》
 正在开发
 版本信息：
-JDK版本：18
+JDK版本：18.0.2
 编辑器：IntelliJ IDEA 2022.2.1 Community版
 开源协议：Apache License 2.0
