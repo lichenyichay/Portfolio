@@ -43,7 +43,15 @@ object HttpUtil {
                 for (key in rawParams.keys){
                     params.add(BasicNameValuePair(key,rawParams[key]))
                 }
+                post.setEntity(UrlEncodedFormEntity(params,"gbk"))
+                val httpResponse = httpClient.execute(post)
+                if(httpResponse.getStatusLine().getStatusCode === 200){
+                    val result = EntityUtils.toString(httpResponse.getEntity())
+                    return@Callable result
+                }
+                null
             })
-        return ""
+        Thread(task).start()
+        return task.get()
     }
 }
