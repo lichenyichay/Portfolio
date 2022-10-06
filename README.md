@@ -5,4 +5,4 @@
 版本信息：
 JDK版本：18.0.2
 编辑器：IntelliJ IDEA 2022.2.1 Community版
-开源协议：Apache License 2.0
+开源协议：GNU General Public License v3.0
