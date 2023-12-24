@@ -17,15 +17,14 @@ import module.xiaogongju as xiaogongju
 def allinone(fuwu,mode,*args):
     """
     :param fuwu 需要服务的功能
-    :param mode 部分功能需要的模式，有：
+    :param mode 部分功能需要的模式（详见Github中All-in-one2.4.0分支的README.md文件）
     :param *args 可变参数，表示需要传入的参数，建议用元组或列表类型，具体所需类型见README.MD
     :return: 0：正常，1：不正常，其他返回值表示功能的结果
 
     功能（按代码顺序排序，不分先后）：大小写互换、抽取随机数、求最小公倍数、求最大公倍数、图形计算器、小学学生信息管理系统、二分查找、求余、向下取整、向上取整、多个数求和、多个数求差、多个数求积、判断闰年、判断是否为质数、整数、小数计算（加减乘除）、分数计算（加减乘除）......（具体见Github All-in-one2.4.0分支Readme.md文件）
     """
     try:
-        i = -1
-        i = i + 1
+        i=0
         if fuwu == "大小写互换":
             zongzifu = []
             gongneng1 = mode
@@ -34,22 +33,17 @@ def allinone(fuwu,mode,*args):
                     zifu = i
                     zifu1 = chr(ord(zifu) + 32)
                     zongzifu.append(zifu1)
-                return("转换结果：",zongzifu)
+                return(zongzifu)
             elif gongneng1 == "2":
                 for i in args:
                     zifu = i
                     zifu1 = chr(ord(zifu) - 32)
                     zongzifu.append(zifu1)
-                return("转换结果：",zongzifu)
+                return(zongzifu)
         elif fuwu == "抽取随机数":
             c = args[0]
             d = args[1]
-            while True:
-                try:
-                    e = args[2]
-                    return random.randomint(d,c,e)
-                except Exception as e:
-                    return repr(e)
+            return random.randint(c,d)
         elif fuwu == "求最小公倍数":
             num1 = args[0]
             num2 = args[1]
@@ -67,9 +61,12 @@ def allinone(fuwu,mode,*args):
             while True:
                 huida = args[0]
                 try:
-                    if tuxing_cal.tuxing(huida) != 1:
-                        if tuxing_cal.tuxing(huida) != 2:
-                            return tuxing_cal.tuxing(huida)
+                    args2=[]
+                    for i in range(1,len(args)):
+                        args2.append(args[i])
+                    if tuxing_cal.tuxing(huida,mode,args2) != 1:
+                        if tuxing_cal.tuxing(huida,mode,args2) != 2:
+                            return tuxing_cal.tuxing(huida,mode,args2)
                         else:
                             return "不支持此图形的计算！"
                     else:
@@ -275,7 +272,7 @@ def allinone(fuwu,mode,*args):
             elif mode == 13:
                 return args[0]/args[1]/args[2]
         elif fuwu == "货币转换-CNY（人民币）->USD（美元）":
-            pass
+            return calculator.duihuan(1,args[0])
         elif fuwu == "货币转换-CNY（人民币）->JPY（日元）":
             pass
         elif fuwu == "货币转换-USD（美元）->CNY（人民币）":
@@ -353,10 +350,5 @@ def allinone(fuwu,mode,*args):
         return 0
     except KeyboardInterrupt:
         return 0
-
-
-# print(__doc__)
-
 import Allinone
-##print(help(Allinone))
-print(allinone("大小写互换","2","a","b"))
+print(allinone("抽取随机数",0,1,100))

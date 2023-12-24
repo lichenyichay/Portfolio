@@ -29,37 +29,37 @@ def FtemporCtemp(mode,FtemporCtemp):
 '''
 def duihuan(mode,money):
     if mode == 1:
-        return 0.1565 * money
+        return 0.14 * money #CNY to USD
     elif mode == 2:
-        return 17.1278 * money
+        return 19.96 * money #CNY to JPY
     elif mode == 3:
-        return 6.9670 * money
+        return 7.13 * money #USD to CNY
     elif mode == 4:
-        return 109.4451 * money
+        return 142.41 * money #USD to JPY
     elif mode == 5:
-        return 0.0584 * money
+        return 0.050 * money #JPY to CNY
     elif mode == 6:
-        return 0.0091 * money
+        return 0.0070 * money #JPY to USD
     elif mode == 7:
-        return 1.1497 * money
+        return 0.88 * money #MOP to CNY
     elif mode == 8:
-        return 0.8640 * money
+        return 1.13 * money #CNY to MOP
     elif mode == 9:
-        return 1.2276 * money
+        return 0.91 * money #HKD to CNY
     elif mode == 10:
-        return 0.8146 * money
+        return 1.09 * money #CNY to HKD
     elif mode == 11:
-        return 4.6834 * money
+        return 0.23 * money #TWD to CNY
     elif mode == 12:
-        return 0.2135 * money
+        return 4.36 * money #CNY to TWD
     elif mode == 13:
-        return 0.1177 * money
+        return 9.06 * money #GBP to CNY
     elif mode == 14:
-        return 9.1443 * money
+        return 0.11 * money #CNY to GBP
     elif mode == 15:
-        return 0.1342 * money
+        return 7.86 * money #EUR to CNY
     elif mode == 16:
-        return 8.2470 * money
+        return 0.13 * money #CNY to EUR
     else:
         raise TypeError("TypeError:模式错误！")
 '''

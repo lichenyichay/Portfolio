@@ -34,4 +34,6 @@
 /shelf/
 /workspace.xml
 
+#运行文件
 setup.py
+*.pyc 
