@@ -37,3 +37,4 @@
 #运行文件
 setup.py
 *.pyc 
+__pycache__

@@ -163,7 +163,7 @@ def tuxing(huida,mode,*args2):
                 return shuchu
             elif huida1 == "周长":
                 shuchu = 2*math.pi*huida2
-                return(f"周长是：{shuchu}")
+                return shuchu
             elif huida1 == "方中圆":
                 shuchu = 0.86 * (huida2 ** 2)
                 return shuchu
