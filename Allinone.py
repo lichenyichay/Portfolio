@@ -13,9 +13,6 @@ import module.math_cal_py as math_cal
 import module.student_py as student_py
 import module.tuxing_cal as tuxing_cal
 import module.xiaogongju as xiaogongju
-###
-###
-###
 def allinone(fuwu,mode,*args):
     """
     :param fuwu 需要服务的功能
