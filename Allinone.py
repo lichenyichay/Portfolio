@@ -4,7 +4,7 @@
 # @FILE:Allinone.py
 # @version:2.4.0
 # @Software: IntelliJ IDEA
-import os,math,time,random
+import os,math,time,random,string
 
 import module.book as book
 import module.calculator as calculator
@@ -23,24 +23,9 @@ def allinone(fuwu,mode,*args):
     功能（按代码顺序排序，不分先后）：大小写互换、抽取随机数、求最小公倍数、求最大公倍数、图形计算器、小学学生信息管理系统、二分查找、求余、向下取整、向上取整、多个数求和、多个数求差、多个数求积、判断闰年、判断是否为质数、整数、小数计算（加减乘除）、分数计算（加减乘除）......（具体见Github All-in-one2.4.0分支Readme.md文件）
     """
     if fuwu == "大小写互换":
-        zongzifu = []
-        gongneng1 = mode
-        if gongneng1 == "1":
-            for i in args:
-                zifu = i
-                zifu1 = chr(ord(zifu) + 32)
-                zongzifu.append(zifu1)
-            return(zongzifu)
-        elif gongneng1 == "2":
-            for i in args:
-                zifu = i
-                zifu1 = chr(ord(zifu) - 32)
-                zongzifu.append(zifu1)
-            return(zongzifu)
-    elif fuwu == "抽取随机数":
-        c = args[0]
-        d = args[1]
-        return random.randint(c,d)
+        return xiaogongju.daorxiao(args[0],mode)
+    elif fuwu == "抽取随机":
+        return xiaogongju.chouqusuiji(args[0],args[1],mode,args[2])
     elif fuwu == "求最小公倍数":
         num1 = args[0]
         num2 = args[1]
@@ -273,5 +258,3 @@ def allinone(fuwu,mode,*args):
         jieshulist = ["功能无效！", "无法实现服务！", "暂时还在开发！"]
         b = random.choice(jieshulist)
         return b
-import Allinone
-print(allinone("抽取随机数",0,1,100))
